@@ -77,12 +77,12 @@
                 for (i = 1; i < tr.length; i++) {
                     var found = false;
                     td = tr[i].getElementsByTagName("td");
+                    var rowText = "";
                     for (j = 0; j < td.length; j++) {
-                        txtValue = td[j].textContent || td[j].innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            found = true;
-                            break;
-                        }
+                        rowText += (td[j].textContent || td[j].innerText) + " ";
+                    }
+                    if (rowText.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
                     }
                     if (found) {
                         tr[i].style.display = "";
